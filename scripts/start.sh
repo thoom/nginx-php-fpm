@@ -39,6 +39,10 @@ if [ ! -d "/var/www/html/.git" ]; then
    else
      git clone $GIT_REPO /var/www/html
    fi
+
+   if [ -f "/var/www/html/composer.json" ]; then
+     composer install --no-dev -d /var/www/html
+   fi
  fi
 fi
 
